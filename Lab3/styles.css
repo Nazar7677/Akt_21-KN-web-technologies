@@ -1,1 +1,139 @@
 
+/* ==========================================================================
+   1. Базові стилі та Box Model
+   ========================================================================== */
+* {
+    box-sizing: border-box; /* Враховує padding і border в ширину елемента */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+.main-header {
+    background-color: #1a252f;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Контейнер для центрування */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+}
+
+/* ==========================================================================
+   2. Flexbox Макет Галереї (Десктоп версія: по 3 картки в ряд)
+   ========================================================================== */
+.gallery-flex {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє перенос карток на наступний рядок */
+    gap: 25px;       /* Простір між картками */
+}
+
+.gallery-item {
+    background-color: #ffffff;
+    flex: 1 1 calc(33.333% - 17px); /* Розрахунок ширини для 3-х колонок */
+    
+    /* Демонстрація Box Model */
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    display: block;
+    object-fit: cover;
+}
+
+.item-content {
+    padding: 20px; /* Демонстрація Box Model внутрішнього відступу */
+}
+
+.item-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #1a252f;
+}
+
+/* ==========================================================================
+   3. Медіа-запит для ПЛАНШЕТІВ (ширина екрана до 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Зміна розміщення блоків: по 2 картки в ряд */
+    .gallery-item {
+        flex: 1 1 calc(50% - 13px);
+    }
+    
+    .main-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ==========================================================================
+   4. Медіа-запит для МОБІЛЬНИХ пристроїв (ширина екрана до 576px)
+   Умови варіанту: правильне розміщення, зміна шрифту, розміру та кольору заливки
+   ========================================================================== */
+@media (max-width: 576px) {
+    /* Правильне розміщення блоків: по 1 картці в ряд (стовпчиком) */
+    .gallery-flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .gallery-item {
+        flex: 1 1 100%;
+        /* Зміна кольору заливки блоків для мобільної версії */
+        background-color: #e8f4fd; 
+        border: 1px solid #b3d7ff;
+    }
+    
+    /* Зміна шрифту та розміру шрифту для мобільної версії */
+    body {
+        font-family: 'Courier New', Courier, monospace; /* Зміна сімейства шрифту */
+    }
+    
+    .main-header h1 {
+        font-size: 1.6rem; /* Зменшення розміру головного заголовка */
+    }
+    
+    .item-content h3 {
+        font-size: 1.1rem; /* Зменшення розміру заголовків карток */
+        color: #0056b3;
+    }
+    
+    .item-content p {
+        font-size: 0.85rem; /* Зменшення тексту опису */
+    }
+    
+    .gallery-item img {
+        height: 180px; /* Корекція висоти фото під мобільні екрани */
+    }
+}
