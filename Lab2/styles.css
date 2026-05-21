@@ -1,1 +1,104 @@
 
+css/* Базові стилі для всього документа */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Оформлення заголовка сторінки */
+header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Стилі для основних секцій */
+section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* --- ОСОБЛИВА СЕКЦІЯ ВАРІАНТА №6 --- */
+.custom-variant-section {
+    /* Завдання: відступи у px дорівнюють варіанту (6px) */
+    padding: 6px; 
+    margin: 20px 0;
+
+    /* Завдання: унікальний Hex-колір контенту з номера варіанта (#000006) */
+    color: #000006; 
+    border: 2px dashed #000006;
+
+    /* Завдання: для парного варіанта вирівнювання по центру */
+    text-align: center; 
+    background-color: #f0f4f8;
+}
+
+.custom-variant-section blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 15px auto;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 10px;
+    border-left: 5px solid #000006;
+}
+
+/* Оформлення таблиці всередині кастомної секції */
+.info-table {
+    margin: 15px auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 400px;
+}
+
+.info-table th, .info-table td {
+    border: 1px solid #000006;
+    padding: 6px;
+}
+
+.info-table th {
+    background-color: #000006;
+    color: #ffffff;
+}
+
+/* Стиль посилання */
+.custom-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.custom-link:hover {
+    text-decoration: underline;
+}
