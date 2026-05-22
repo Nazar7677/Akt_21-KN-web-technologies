@@ -1,1 +1,228 @@
+<!DOCTYPE html>
+<html lang="uk">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота 5</title>
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e0f7fa; /* світло-блакитний фон */
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background: linear-gradient(90deg, #00796b, #004d40); /* синьо-зелений градієнт */
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    section {
+        background-color: #ffffff; /* залишаємо білий для контрасту */
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* трохи тіні для об’єму */
+    }
+
+    button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: #00796b; /* зелена кнопка */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #004d40; /* темніший відтінок при наведенні */
+    }
+
+    #text {
+        font-size: 20px;
+        transition: 0.3s;
+    }
+
+    #list li {
+        margin-top: 10px;
+    }
+
+    footer {
+        background: linear-gradient(90deg, #00796b, #004d40); /* градієнт як у header */
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Лабораторна робота 5</h1>
+    </header>
+
+    <main>
+
+        <!-- Зміна тексту -->
+        <section>
+
+            <h2>Зміна контенту</h2>
+
+            <p id="text">
+                Початковий текст сторінки.
+            </p>
+
+            <button id="changeButton">
+                Змінити текст
+            </button>
+
+        </section>
+
+        <!-- Додавання елементів -->
+        <section>
+
+            <h2>Список елементів</h2>
+
+            <button id="addButton">
+                Додати елемент
+            </button>
+
+            <button id="removeButton">
+                Видалити елемент
+            </button>
+
+            <ul id="list"></ul>
+
+        </section>
+
+        <!-- Додаткове завдання -->
+        <section>
+
+            <h2>Додаткове завдання</h2>
+
+            <button id="variantButton">
+                Натисніть 6 разів!
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Виконав: Кушка Назар</p>
+    </footer>
+
+    <script>
+
+        // Отримання елементів DOM
+        let text = document.getElementById("text");
+
+        let changeButton = document.getElementById("changeButton");
+
+        let addButton = document.getElementById("addButton");
+
+        let removeButton = document.getElementById("removeButton");
+
+        let list = document.getElementById("list");
+
+        let variantButton = document.getElementById("variantButton");
+
+
+
+        // Зміна тексту
+        changeButton.addEventListener("click", function () {
+
+            text.textContent = "Текст успішно змінено!";
+
+            console.log("Текст змінено.");
+
+        });
+
+
+
+        // Зміна стилю при наведенні
+        text.addEventListener("mouseover", function () {
+
+            text.style.color = "red";
+
+            text.style.fontSize = "28px";
+
+        });
+
+
+
+        // Повернення стилю
+        text.addEventListener("mouseout", function () {
+
+            text.style.color = "black";
+
+            text.style.fontSize = "20px";
+
+        });
+
+
+
+        // Додавання нового елемента
+        addButton.addEventListener("click", function () {
+
+            let newItem = document.createElement("li");
+
+            newItem.textContent = "Новий елемент списку";
+
+            list.appendChild(newItem);
+
+            console.log("Елемент додано.");
+
+        });
+
+
+
+        // Видалення елемента
+        removeButton.addEventListener("click", function () {
+
+            if (list.lastElementChild) {
+
+                list.removeChild(list.lastElementChild);
+
+                console.log("Елемент видалено.");
+
+            }
+
+        });
+
+
+
+        // Додаткове завдання
+        let clickCount = 0;
+
+        variantButton.addEventListener("click", function () {
+
+            clickCount++;
+
+            if (clickCount === 6) {
+
+                alert("Назар Кушка варіант номер 6!");
+
+                clickCount = 0;
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
